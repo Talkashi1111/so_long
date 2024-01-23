@@ -1,0 +1,10 @@
+*.o
+*.a
+.DS_Store
+get_next_line/.DS_Store
+printf/.DS_Store
+so_long3/libft/.DS_Store
+so_long3/tests/minilibx/.DS_Store
+libmlx.dylib
+so_long
+obj
