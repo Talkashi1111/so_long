@@ -62,6 +62,21 @@ an example:
 ./so_long maps/test_nada.ber
 ```
 
+If you wish to test a faster version of the game(you know , because of the fun), try using rule
+```bash
+make faster
+```
+
+or alternatively, if your having a bad luck
+```bash
+make slower
+```
+
+and than run for example
+```bash
+make test
+```
+
 ## input map
 
 To launch the game, please use a text file ending with .ber . The map will contain only a ser of specific charachters:
