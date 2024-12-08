@@ -22,7 +22,7 @@ FILES := main.c \
 		check_if_map_solvable.c \
 		map_surrounded_by_walls.c
 SRCS := $(addprefix $(SRC_DIR)/, $(FILES))
-TESTER := tests/big.ber
+TESTER := maps/big.ber
 UNAME := $(shell uname)
 ifeq ($(UNAME),Darwin)
 	MINILIBX_DIR := minilibx-macos
@@ -35,15 +35,25 @@ else
 	LFLAGS := $(MLX_PATH) -lX11 -lXext -L$(LIBFT_DIR) -lft
 	LEAK_TOOL := valgrind --leak-check=full
 endif
+# Default FRAME_RATE_MS
+FRAME_RATE_MS ?= 15
 
-CFLAGS := -Wall -Wextra -Werror -g
+CFLAGS := -Wall -Wextra -Werror -g -D FRAME_RATE_MS=$(FRAME_RATE_MS)
 IFLAGS := -I$(MINILIBX_DIR) -I$(LIBFT_DIR) -I$(INCLUDE_DIR)
 #LFLAGS := -L$(MINILIBX_DIR) -lmlx -lX11 -lXext -L$(LIBFT_DIR) -lft
 OBJECTS := $(addprefix $(OBJECT_DIR)/,$(FILES:.c=.o))
 CC := gcc
 
-.PHONY: all 
+.PHONY: all
 all: $(NAME)
+
+.PHONY: faster
+faster: fclean
+	$(MAKE) FRAME_RATE_MS=3
+
+.PHONY: slower
+slower: fclean
+	$(MAKE) FRAME_RATE_MS=30
 
 $(NAME): $(OBJECTS) $(LIBFT_DIR)/libft.a $(MLX_PATH)
 	$(CC) $(CFLAGS) $(OBJECTS) $(LFLAGS) -o $(NAME)
@@ -57,7 +67,7 @@ $(MLX_PATH):
 
 $(OBJECT_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJECT_DIR)
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ 
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 .PHONY: re
 re: fclean all

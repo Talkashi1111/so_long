@@ -4,16 +4,16 @@
 
 This project is part of the curriculum at 42 School, focused on developing a 2D game. The primary objective is to create a game using the "minilibx" graphics library.
 
-![Playmode](tests/bob_play.gif)
+![Playmode](gifs/bob_play.gif)
 
 ---
 
-![bob_lost](tests/bob_lost.gif)
+![bob_lost](gifs/bob_lost.gif)
 
 ---
 
-![bob_win](tests/bob_win.gif)
-## game objective 
+![bob_win](gifs/bob_win.gif)
+## game objective
 
 The player must collect all the items scattered throughout the game and find their way to the escape gate. The challenge is to achieve this with the minimum number of movements.
 
@@ -55,15 +55,16 @@ Control the player using the keyboard:
 ## mode of use
 
 to launch the game please use : "./so_long <map_name>.ber"
-an example: 
+All maps are included in a folder name "maps"
+an example:
 
 ```shell
-./so_long tests/test_nada.ber
+./so_long maps/test_nada.ber
 ```
 
 ## input map
 
-To launch the game, please use a text file ending with .ber . The map will contain only a ser of specific charachters: 
+To launch the game, please use a text file ending with .ber . The map will contain only a ser of specific charachters:
 '0' : for empty path
 '1' : for a wall
 'C' : for a collectible
@@ -73,7 +74,9 @@ To launch the game, please use a text file ending with .ber . The map will conta
 ## Supported Operating Systems
 
 The game is compatible with both macOS and Linux systems.
-
+The version of the graphic library included in this repo are :
+minilibx-linux: 2011
+minilibx-macos: 2019
 ---
 
 feel free to contact me

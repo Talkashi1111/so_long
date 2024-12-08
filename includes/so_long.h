@@ -6,7 +6,7 @@
 /*   By: tkashi <tkashi@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:41:33 by tkashi            #+#    #+#             */
-/*   Updated: 2024/01/22 21:55:42 by tkashi           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:36:15 by tkashi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@
 # define TRUE	1
 # define MAX_TRIES 100
 # define ENEMY_RADIUS 3
+#ifndef FRAME_RATE_MS
 # define FRAME_RATE_MS 15
+#endif
 # define MUSHROOM_IMGS 4
 
 # ifdef __linux__
